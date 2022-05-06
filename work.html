@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nathan Dean - Creative Web Developer</title>
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <nav class="flex wrap alignCenter between full">
+
+            <span id="headerContainer" class="flex center alignCenter half">
+
+                <a href="index.html" class="header">NATHAN DEAN</a>
+
+            </span>
+
+            <ul id="menu" class="flex around stretch fullHeight half">
+                
+                    <li>
+
+                        <a href="about.html">about</a>
+
+                    </li>
+
+                    <li id="currentPage">
+
+                        <h3>work</h3>
+
+                    </li>
+
+                    <li>
+
+                        <a href="contact.html">contact</a>
+
+                    </li>
+
+            </ul>
+
+            <div id="menuButtonContainer">
+
+                <button id="menuButton">...</button>
+
+            </div>
+
+        </nav>
+
+        <main class="full">
+
+            <section class="flex center alignCenter wrap full">
+
+                <div id="gallery" class="flex evenly alignStart contentStart wrap scroll blue"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/work.js" type="module"></script>
+
+</body>
+
+</html>

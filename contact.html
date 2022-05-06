@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nathan Dean - Creative Web Developer</title>
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+    
+        <nav class="flex wrap alignCenter between full">
+
+            <span id="headerContainer" class="flex center alignCenter half">
+
+                <a href="index.html" class="header">NATHAN DEAN</a>
+
+            </span>
+
+            <ul id="menu" class="flex around stretch fullHeight half">
+                
+                    <li>
+
+                        <a href="about.html">about</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="work.html">work</a>
+
+                    </li>
+
+                    <li id="currentPage">
+
+                        <h3>contact</h3>
+
+                    </li>
+
+            </ul>
+
+            <div id="menuButtonContainer">
+
+                <button id="menuButton">...</button>
+
+            </div>
+
+        </nav>
+
+        <!-- ID used to change flex-direction to column for simplied display on tablet/mobile -->
+        <main id="contactMain">
+
+            <!-- Wraps sections to allow scrolling on simplified display -->
+            <div id="contactScrollContainer" class="full scroll">
+            
+                <section class="flex center alignCenter half blue">
+
+                    <div class="center textContainer">
+                        
+                        <p>
+
+                            Thanks for visiting.  If you’d like to get in touch please send me an email using the form here.
+
+                        </p>
+
+                        <p>
+
+                            You can also find out more about me and my work on <a href="https://github.com/NathanDean">Github</a> and <a href="https://www.linkedin.com/in/nathanjdean/">LinkedIn</a>.
+
+                        </p>
+
+                        <p id="contactP" class="none">If I were you I'd turn my phone the other way round for this page, but hey, it's your life.</p>
+                        
+                    </div>
+
+                </section>
+
+                <!-- Divides sections on simplified display -->
+                <hr id="divider" class="none">
+
+                <section class="flex center alignCenter half">
+
+                    <div id="formContainer" class="full">
+                        <form action="">
+
+                            <label for="email">email</label>
+                            <input type="email" name="email">
+
+                            <label for="subject">subject</label>
+                            <input type="text" name="subject">
+
+                            <label for="message">message</label>
+                            <textarea name="message"></textarea>
+
+                            <button>send</button>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="scripts/navbar.js"></script>
+
+</body>
+
+</html>
