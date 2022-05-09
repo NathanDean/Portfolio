@@ -91,18 +91,21 @@
                 <section class="flex center alignCenter half">
 
                     <div id="formContainer" class="full">
-                        <form action="">
+                        <form method="POST" action="send" enctype = "multipart/form-data">
 
                             <label for="email">email</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" required>
 
                             <label for="subject">subject</label>
-                            <input type="text" name="subject">
+                            <input type="text" name="subject" required>
 
                             <label for="message">message</label>
-                            <textarea name="message"></textarea>
+                            <textarea name="message" required></textarea>
 
-                            <button>send</button>
+                            <button type="submit" value="submit">send</button>
+
+                        </form>
+
                     </div>
 
                 </section>
