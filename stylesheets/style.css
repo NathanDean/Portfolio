@@ -600,7 +600,7 @@
 
     /* Touchscreen */
 
-        @media(hover: none) {
+        @media(pointer: coarse) and (hover: none) {
             .galleryContentItem h2, .galleryContentItem h4, .galleryContentItem div {
                 opacity: 1;
             }

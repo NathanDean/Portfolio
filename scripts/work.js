@@ -79,27 +79,51 @@ function createItems() {
         itemLanguage.classList.add("centerText");
         itemLanguage.textContent = projects[i].language;
 
-        // Creates + styles Github link
-        const itemGithubLink = document.createElement("a");
-        itemGithubLink.setAttribute("href", projects[i].github);
+        // Creates + styles GitHub link
+        const itemGitHubLink = document.createElement("a");
+        itemGitHubLink.setAttribute("href", projects[i].github);
 
-        // Creates + styles Codepen link
-        const itemCodepenLink = document.createElement("a");
-        itemCodepenLink.setAttribute("href", projects[i].Codepen);
 
-        // Creates Github/Codepen div
+        // Creates GitHub/Codepen div
         const containerDiv = document.createElement("div");
         containerDiv.classList.add("fullRow");
         containerDiv.classList.add("transparent");
         containerDiv.classList.add("centerText");
-        containerDiv.innerHTML = `<a href = ${itemGithubLink} >Github</a> | <a href = ${itemCodepenLink} >Codepen</a>`
+        // Creates + styles Codepen link
+        if(projects[i].codepen){
+            const itemCodepenLink = document.createElement("a");
+            itemCodepenLink.setAttribute("href", projects[i].codepen);
+            containerDiv.innerHTML = `<a href = ${itemGitHubLink} >GitHub</a> | <a href = ${itemCodepenLink} >Codepen</a>`
+        }
+        else {
+            containerDiv.innerHTML = `<a href = ${itemGitHubLink} >GitHub</a>`
+        }
+        
+
+        const links = containerDiv.children;
+        console.log(links);
 
         // Adds styles to make text more readable if gallery item has dark/multicoloured background
         if(projects[i].lightText === true){
             itemTitle.classList.add("whiteText");
-            itemLanguage.classList.add("whiteText")
+            itemLanguage.classList.add("whiteText");
+            containerDiv.classList.add("whiteText");
+            // itemTitle.classList.add("outline");
+            // itemLanguage.classList.add("outline");
+            // containerDiv.classList.add("outline");
+            for(let link of links){
+                link.classList.add("whiteText");
+                // link.classList.add("outline");
+            }
+        }
+
+        if(projects[i].outline === true){
             itemTitle.classList.add("outline");
             itemLanguage.classList.add("outline");
+            containerDiv.classList.add("outline");
+            for(let link of links){
+                link.classList.add("outline");
+            }
         }
 
         // Appends title + language to gallery items
@@ -115,14 +139,14 @@ function addTransformOrigin() {
     if(width > 1400){
         if(galleryItems.length % 4 === 0){
             bottomLeft(galleryItems[galleryItems.length - 4]);
-            for(i = 3; i > 1; i--){
+            for(let i = 3; i > 1; i--){
                 bottom(galleryItems[galleryItems.length - i]);
             }
             bottomRight(galleryItems[galleryItems.length - 1]);
         }
         else if(galleryItems.length % 4 === 3) {
             bottomLeft(galleryItems[galleryItems.length - 3]);
-            for(i = 2; i > 0; i--){
+            for(let i = 2; i > 0; i--){
                 bottom(galleryItems[galleryItems.length - i]);
             }
             createEmptyItem();
@@ -130,7 +154,7 @@ function addTransformOrigin() {
         else if(galleryItems.length % 4 === 2) {
             bottomLeft(galleryItems[galleryItems.length - 2]);
             bottom(galleryItems[galleryItems.length - 1]);
-            for(i = 0; i < 2; i++){
+            for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
         }
@@ -154,7 +178,7 @@ function addTransformOrigin() {
         }
         else {
             bottomLeft(galleryItems[galleryItems.length - 1]);
-            for(i = 0; i < 2; i++){
+            for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
         }
