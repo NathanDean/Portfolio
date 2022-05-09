@@ -11,11 +11,11 @@ const projects = [
         outline: true
     },
     {
-        title: "Watercolour Effect",
+        title: "Pointillist Effect",
         language: "Processing",
-        github: "https://github.com/NathanDean/ProcessingProjects/tree/main/WatercolourEffect",
+        github: "https://github.com/NathanDean/ProcessingProjects/tree/main/PointillistEffect",
         codepen: undefined,
-        image: "./images/watercolour.JPG",
+        image: "./images/pointillism.JPG",
         lightText: true,
         outline: false
     },
