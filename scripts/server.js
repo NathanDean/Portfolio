@@ -1,7 +1,6 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const multiparty = require("multipary");
-const e = require("express");
+const multiparty = require("multiparty");
 require(dotenv).config();
 
 const app = express();
