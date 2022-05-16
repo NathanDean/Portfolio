@@ -16,9 +16,9 @@ Finally, I'm fixing a couple of small bugs affecting the display of the nav menu
 
 TL;DR
 
-* Portfolio website designed in Figma and built using HTML, CSS, JavaScript, Node.js and Express
+* Portfolio website designed in Figma and built using HTML, CSS, JavaScript, Node.js, Express and Nodemailer
 * Responsive for desktop, laptop, tablet and mobile (landscape and portrait)
-* Projects load to gallery from projects.js module imported to work.js
+* Projects load to gallery from separate module
 * Contact form sends automatically send email on submit using Nodemailer
 * App deployed on Heroku
 
