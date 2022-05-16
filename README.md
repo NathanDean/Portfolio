@@ -8,7 +8,7 @@ I designed it in Figma (you can view the designs <a href = "https://www.figma.co
 
 The site was initially built for a desktop display, and is fully responsive for smaller laptops, tablets and mobile devices, in both portrait and landscape orientation.
 
-I've used JavaScript to animate the title and menu on index.html and enable navigation to the rest of the site at smaller screen sizes, and to change the transform-origin property of projects in the gallery according to their position on work.html.  I've also added a script to control the navbar header display at different screen sizes and orientation, and moved the array containing the projects to a separate module, which I've imported to work.js.
+I've used JavaScript to animate the title and menu on the index page and enable navigation to the rest of the site at smaller screen sizes, and to change the transform-origin property of projects in the gallery according to their position on the "work" page.  I've also added a script to control the navbar header display at different screen sizes and orientation, and moved the array containing the projects to a separate module, which I've imported to work.js.
 
 The app is deployed to Heroku.  On the back-end, the form on the contact page uses Nodemailer to automatically send an email on submit, and I'm currently working on adding further back-end functionality to load projects to the gallery from a database.
 
