@@ -4,7 +4,7 @@ Hi, thanks for visiting.
 
 This is my portfolio website, which you can view at <a href = "https://www.nathandean.co.uk">nathandean.co.uk</a>.
 
-I designed it in Figma (https://www.figma.com/file/reGAQpW6X03H6yemheC9HY/PortfolioD2?node-id=0%3A1) and built the front-end using HTML, CSS and JavaScript, while the back-end uses Node.js, Express and Nodemailer.
+I designed it in Figma (you can view the designs <a href = "https://www.figma.com/file/reGAQpW6X03H6yemheC9HY/PortfolioD2?node-id=0%3A1">here</a>) and built the front-end using HTML, CSS and JavaScript, while the back-end uses Node.js, Express and Nodemailer.
 
 The site was initially built for a desktop display, and is fully responsive for smaller laptops, tablets and mobile devices, in both portrait and landscape orientation.
 
