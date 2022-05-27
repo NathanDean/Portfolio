@@ -11,7 +11,7 @@ const projects = [
         outline: true
     },
     {
-        title: "Pointillist Effect",
+        title: "Pointillist Image Filter",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/PointillistEffect",
         codepen: undefined,
@@ -21,7 +21,7 @@ const projects = [
     },
     {
         title: "Smoking Text",
-        language: "HTML/CSS",
+        language: "CSS",
         github: "https://github.com/NathanDean/WebDevBootcamp/tree/main/Week%202/Smoke",
         codepen: undefined,
         image: "./images/smoke.JPG",
@@ -39,12 +39,21 @@ const projects = [
     },
     {
         title: "Portfolio",
-        language: "HTML/CSS/JavaScript",
+        language: "JavaScript/Node.js/Express",
         github: "https://github.com/NathanDean/Portfolio",
         codepen: undefined,
         image: "./images/portfolio.JPG",
         lightText: true,
         outline: false
+    },
+    {
+        title: "Todo app",
+        language: "React",
+        github: "https://github.com/NathanDean/reactTodo",
+        codepen: undefined,
+        image: "./images/todo.JPG",
+        lightText: true,
+        outline: true
     }
 
 ];
