@@ -54,15 +54,6 @@ const projects = [
         image: "./images/todo.JPG",
         lightText: true,
         outline: true
-    },
-    {
-        title: "Todo app",
-        language: "React",
-        github: "https://github.com/NathanDean/reactTodo",
-        codepen: undefined,
-        image: "./images/todo.JPG",
-        lightText: true,
-        outline: true
     }
 
 ];
