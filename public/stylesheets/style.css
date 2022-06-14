@@ -338,12 +338,6 @@
 
 /* Contact */
 
-    /* Text section */
-    
-        #contactText p, #contactText p a {
-            font-size: 1.5rem;
-        }
-
     /* Form section */
 
         #formContainer {
