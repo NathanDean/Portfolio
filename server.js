@@ -7,7 +7,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
 app.get("/", function(req, res){
