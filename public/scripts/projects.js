@@ -5,55 +5,37 @@ const projects = [
         title: "Mouse Tracker",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/MouseTracking",
-        codepen: undefined,
-        image: "./images/mouseTracking.JPG",
-        lightText: true,
-        outline: true
+        image: "./images/mouseTracking.JPG"
     },
     {
         title: "Pointillist Image Filter",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/PointillistEffect",
-        codepen: undefined,
-        image: "./images/pointillism.JPG",
-        lightText: true,
-        outline: false
+        image: "./images/pointillism.JPG"
     },
     {
         title: "Smoking Text",
         language: "CSS",
         github: "https://github.com/NathanDean/WebDevBootcamp/tree/main/Week%202/Smoke",
-        codepen: undefined,
-        image: "./images/smoke.JPG",
-        lightText: true,
-        outline: true
+        image: "./images/smoke.JPG"
     },
     {
         title: "Perlin Terrain",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/PerlinTerrain",
-        codepen: undefined,
-        image: "./images/perlin.JPG",
-        lightText: false,
-        outline: false
+        image: "./images/perlin.JPG"
     },
     {
         title: "Portfolio",
         language: "JavaScript/Node.js/Express",
         github: "https://github.com/NathanDean/Portfolio",
-        codepen: undefined,
-        image: "./images/portfolio.JPG",
-        lightText: true,
-        outline: false
+        image: "./images/portfolio.JPG"
     },
     {
         title: "Todo app",
         language: "React",
         github: "https://github.com/NathanDean/reactTodo",
-        codepen: undefined,
-        image: "./images/todo.JPG",
-        lightText: true,
-        outline: true
+        image: "./images/todo.JPG"
     }
 
 ];
@@ -62,17 +44,13 @@ const projects = [
 //     title;
 //     language;
 //     github;
-//     codepen;
 //     image;
-//     lightText;
 
-//     constructor(title, github, codepen, language, image, lightText){
+//     constructor(title, github, codepen, language, image){
 //             this.title = title;
 //             this.github = github;
-//             this.codepen = codepen;
 //             this.language = language;
 //             this.image = image;
-//             this.lightText = lightText;
 //         }
 // }
 

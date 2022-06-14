@@ -67,14 +67,14 @@ function createItems() {
         
         // Creates + styles gallery item title
         const itemTitle = document.createElement("h2");
-        itemTitle.classList.add("fullRow");
+        itemTitle.classList.add("full");
         itemTitle.classList.add("transparent");
         itemTitle.classList.add("centerText");
         itemTitle.textContent = projects[i].title;
 
         // Creates + styles language subheading
         const itemLanguage = document.createElement("h4");
-        itemLanguage.classList.add("fullRow");
+        itemLanguage.classList.add("full");
         itemLanguage.classList.add("transparent");
         itemLanguage.classList.add("centerText");
         itemLanguage.textContent = projects[i].language;
@@ -82,54 +82,43 @@ function createItems() {
         // Creates + styles GitHub link
         const itemGitHubLink = document.createElement("a");
         itemGitHubLink.setAttribute("href", projects[i].github);
+        itemGitHubLink.innerText = "GitHub";
+        itemGitHubLink.classList.add("full");
+        itemGitHubLink.classList.add("transparent");
+        itemGitHubLink.classList.add("centerText");
 
+        // Creates + styles text container div
+        const galleryItemTextContainer = document.createElement("div");
+        galleryItemTextContainer.classList.add("galleryItemTextContainer");
+        galleryItemTextContainer.classList.add("flex");
+        galleryItemTextContainer.classList.add("wrap");
+        galleryItemTextContainer.classList.add("around");
+        galleryItemTextContainer.classList.add("contentAround");
+        galleryItemTextContainer.classList.add("full");
+        galleryItemTextContainer.classList.add("halfHeight");
+        galleryItemTextContainer.classList.add("transparent");
+        galleryItemTextContainer.classList.add("centerText");
 
-        // Creates GitHub/Codepen div
-        const containerDiv = document.createElement("div");
-        containerDiv.classList.add("fullRow");
-        containerDiv.classList.add("transparent");
-        containerDiv.classList.add("centerText");
-        // Creates + styles Codepen link
-        if(projects[i].codepen){
-            const itemCodepenLink = document.createElement("a");
-            itemCodepenLink.setAttribute("href", projects[i].codepen);
-            containerDiv.innerHTML = `<a href = ${itemGitHubLink} >GitHub</a> | <a href = ${itemCodepenLink} >Codepen</a>`
-        }
-        else {
-            containerDiv.innerHTML = `<a href = ${itemGitHubLink} >GitHub</a>`
-        }
-        
+        const galleryItemContentWrapper = document.createElement("wrapper");
+        galleryItemContentWrapper.classList.add("galleryItemContentWrapper");
+        galleryItemContentWrapper.classList.add("flex");
+        galleryItemContentWrapper.classList.add("alignCenter");
+        galleryItemContentWrapper.classList.add("full");
+        galleryItemContentWrapper.classList.add("fullHeight")
 
-        const links = containerDiv.children;
-        console.log(links);
+        // Appends title + language to text container
+        galleryItemTextContainer.append(itemTitle);
+        galleryItemTextContainer.append(itemLanguage);
+        galleryItemTextContainer.append(itemGitHubLink);
 
-        // Adds styles to make text more readable if gallery item has dark/multicoloured background
-        if(projects[i].lightText === true){
-            itemTitle.classList.add("whiteText");
-            itemLanguage.classList.add("whiteText");
-            containerDiv.classList.add("whiteText");
-            // itemTitle.classList.add("outline");
-            // itemLanguage.classList.add("outline");
-            // containerDiv.classList.add("outline");
-            for(let link of links){
-                link.classList.add("whiteText");
-                // link.classList.add("outline");
-            }
-        }
+        // Appends text container to galleryItemContentWrapper
+        galleryItemContentWrapper.append(galleryItemTextContainer);
 
-        if(projects[i].outline === true){
-            itemTitle.classList.add("outline");
-            itemLanguage.classList.add("outline");
-            containerDiv.classList.add("outline");
-            for(let link of links){
-                link.classList.add("outline");
-            }
-        }
+        // Appends text container to gallery item
+        // galleryItem.append(galleryItemTextContainer);
 
-        // Appends title + language to gallery items
-        galleryItem.append(itemTitle);
-        galleryItem.append(itemLanguage);
-        galleryItem.append(containerDiv);
+        // Appends wrapper to gallery item
+        galleryItem.append(galleryItemContentWrapper);
     }
 }
 
