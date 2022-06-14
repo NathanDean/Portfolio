@@ -1,5 +1,5 @@
 // Imports array of projects to be added to gallery
-import projects from "./projects.js";
+import projects from "./projects";
 
 // Selects gallery
 const gallery = document.querySelector("#gallery");
