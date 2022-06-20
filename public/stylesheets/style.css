@@ -1,22 +1,3 @@
-/* Order */
-
-    /* Visibility
-    Display
-        Flexbox
-    Position
-    Size
-    Margin/Padding/Border
-    Transform
-    Overflow/Scroll
-    Background
-    Text
-    Transition */
-
-
-/* Contents */
-
-
-
 /* Import font */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
@@ -235,7 +216,7 @@
                 margin-bottom: 1.25rem;
             }
 
-/* Gallery */
+/* Work */
 
     /* Sets size of gallery */
 
@@ -591,14 +572,6 @@
     
         .whiteText {
             color: var(--offWhite);
-        }
-
-        /* Adds outline to text to improve readability */
-        
-        .outline {
-            font-weight: 300;
-            letter-spacing: .4rem;
-            text-shadow: -1px -1px 0 var(--darkGrey), 1px -1px 0 var(--darkGrey), -1px 1px 0 var(--darkGrey), 1px 1px 0 var(--darkGrey);
         }
 
 /* Media queries */
