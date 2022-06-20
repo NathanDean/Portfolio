@@ -241,7 +241,7 @@
 
         #gallery {    
             width: 85vw;
-            max-height: 75vh;
+            height: 75vh;
         }
 
     /* Sets size items in gallery (including invisible filler items) */
@@ -600,7 +600,6 @@
             letter-spacing: .4rem;
             text-shadow: -1px -1px 0 var(--darkGrey), 1px -1px 0 var(--darkGrey), -1px 1px 0 var(--darkGrey), 1px 1px 0 var(--darkGrey);
         }
-
 
 /* Media queries */
 

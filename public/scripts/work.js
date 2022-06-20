@@ -4,36 +4,107 @@ import projects from "./projects.js";
 // Selects gallery
 const gallery = document.querySelector("#gallery");
 
-
 // Stores items to be added to gallery
 let galleryItems = [];
 
-// Creates new gallery item
-function createItem() {
-    const item = document.createElement("div");    
-    return item;
+// Stores styles for galleryItem
+const galleryItemStyles = [
+    "gallerySquare",
+    "galleryContentItem",
+    "flex",
+    "center",
+    "alignCenter",
+    "contentCenter",
+    "wrap"
+];
+
+// Stores styles for emptyItem
+const emptyItemStyles = [
+    "gallerySquare",
+    "invisible"
+];
+
+// Stores styles for contentWrapper
+const contentWrapperStyles = [
+    "galleryItemContentWrapper",
+    "flex",
+    "alignCenter",
+    "full",
+    "fullHeight"
+];
+
+// Stores styles for textContainer
+const textContainerStyles = [
+    "galleryItemTextContainer",
+    "flex",
+    "wrap",
+    "around",
+    "contentAround",
+    "full",
+    "halfHeight",
+    "transparent",
+    "centerText"
+];
+
+// Stores styles for text elements
+const textStyles = [
+    "full"
+];
+
+// Adds styles to element from relevant array
+function addStyles(element, styles){
+    for(let style of styles){
+        element.classList.add(style);
+    }
 }
 
-// Set size of gallery items
-function gallerySquare(item){
-    item.classList.add("gallerySquare");
-};
+// Creates + styles galleryItem
+function createGalleryItem(){
+    const galleryItem = document.createElement("div");    
+    addStyles(galleryItem, galleryItemStyles);
+    return galleryItem;
+}
 
-// Set transform origin of gallery items
-function bottomLeft(item){
-    item.classList.add("bottomLeft");
-};
-function bottom(item){
-    item.classList.add("bottom");
-};
-function bottomRight(item){
-    item.classList.add("bottomRight");
-};
+// Creates + styles contentWrapper
+function createContentWrapper(){
+    const contentWrapper = document.createElement("div");
+    addStyles(contentWrapper, contentWrapperStyles);
+    return contentWrapper;
+}
 
-// Make filler items invisible
-function invisible(item){
-    item.classList.add("invisible");
-};
+// Creates + styles textContainer
+function createTextContainer(){
+    const textContainer  = document.createElement("div");
+    addStyles(textContainer, textContainerStyles);
+    return textContainer;
+}
+
+// Creates + styles title
+function createTitle(){
+    const title = document.createElement("h2");
+    addStyles(title, textStyles);
+    return title;
+}
+
+// Creates + styles languageHeading
+function createLanguageHeading(){
+    const languageHeading = document.createElement("h4");
+    addStyles(languageHeading, textStyles);
+    return languageHeading;
+}
+
+// Creates + styles gitHubLink
+function createGitHubLink(){
+    const gitHubLink = document.createElement("a");
+    addStyles(gitHubLink, textStyles);
+    gitHubLink.innerText = "GitHub";
+    return gitHubLink;
+}
+
+// Sets transform origin of gallery items
+function setOrigin(element, origin){
+    element.classList.add(origin)
+}
 
 // Pushes gallery item to array
 function pushItem(item){
@@ -42,9 +113,8 @@ function pushItem(item){
 
 // Creates empty item to fill space in gallery
 function createEmptyItem(){
-    const emptyItem = createItem();
-    gallerySquare(emptyItem);
-    invisible(emptyItem);
+    const emptyItem = document.createElement("div");
+    addStyles(emptyItem, emptyItemStyles)
     pushItem(emptyItem);
 }
 
@@ -52,73 +122,27 @@ function createEmptyItem(){
 function createItems() {
     for(let i = projects.length - 1; i >= 0; i--){
         
-        // Creates + styles div
-        const galleryItem = createItem();
+        // Creates + styles galleryItem and descendent elements
+        const galleryItem = createGalleryItem();
+        const contentWrapper = createContentWrapper();
+        const textContainer = createTextContainer();
+        const title = createTitle();
+        const languageHeading = createLanguageHeading();
+        const gitHubLink = createGitHubLink();
 
-        gallerySquare(galleryItem);
-        galleryItem.classList.add("galleryContentItem");
-        galleryItem.classList.add("flex");
-        galleryItem.classList.add("center");
-        galleryItem.classList.add("alignCenter");
-        galleryItem.classList.add("contentCenter");
-        galleryItem.classList.add("wrap");
+        // Adds content to elements
         galleryItem.style.backgroundImage = `url(${projects[i].image})`;
-        galleryItems.push(galleryItem);
-        
-        // Creates + styles gallery item title
-        const itemTitle = document.createElement("h2");
-        itemTitle.classList.add("full");
-        itemTitle.classList.add("transparent");
-        itemTitle.classList.add("centerText");
-        itemTitle.textContent = projects[i].title;
+        title.textContent = projects[i].title;
+        languageHeading.textContent = projects[i].language;
+        gitHubLink.setAttribute("href", projects[i].github);
 
-        // Creates + styles language subheading
-        const itemLanguage = document.createElement("h4");
-        itemLanguage.classList.add("full");
-        itemLanguage.classList.add("transparent");
-        itemLanguage.classList.add("centerText");
-        itemLanguage.textContent = projects[i].language;
+        // Appends elements to parents
+        textContainer.append(title, languageHeading, gitHubLink);
+        contentWrapper.append(textContainer);
+        galleryItem.append(contentWrapper);
 
-        // Creates + styles GitHub link
-        const itemGitHubLink = document.createElement("a");
-        itemGitHubLink.setAttribute("href", projects[i].github);
-        itemGitHubLink.innerText = "GitHub";
-        itemGitHubLink.classList.add("full");
-        itemGitHubLink.classList.add("transparent");
-        itemGitHubLink.classList.add("centerText");
-
-        // Creates + styles text container div
-        const galleryItemTextContainer = document.createElement("div");
-        galleryItemTextContainer.classList.add("galleryItemTextContainer");
-        galleryItemTextContainer.classList.add("flex");
-        galleryItemTextContainer.classList.add("wrap");
-        galleryItemTextContainer.classList.add("around");
-        galleryItemTextContainer.classList.add("contentAround");
-        galleryItemTextContainer.classList.add("full");
-        galleryItemTextContainer.classList.add("halfHeight");
-        galleryItemTextContainer.classList.add("transparent");
-        galleryItemTextContainer.classList.add("centerText");
-
-        const galleryItemContentWrapper = document.createElement("wrapper");
-        galleryItemContentWrapper.classList.add("galleryItemContentWrapper");
-        galleryItemContentWrapper.classList.add("flex");
-        galleryItemContentWrapper.classList.add("alignCenter");
-        galleryItemContentWrapper.classList.add("full");
-        galleryItemContentWrapper.classList.add("fullHeight")
-
-        // Appends title + language to text container
-        galleryItemTextContainer.append(itemTitle);
-        galleryItemTextContainer.append(itemLanguage);
-        galleryItemTextContainer.append(itemGitHubLink);
-
-        // Appends text container to galleryItemContentWrapper
-        galleryItemContentWrapper.append(galleryItemTextContainer);
-
-        // Appends text container to gallery item
-        // galleryItem.append(galleryItemTextContainer);
-
-        // Appends wrapper to gallery item
-        galleryItem.append(galleryItemContentWrapper);
+        // Pushes finished galleryItem to galleryItems array
+        pushItem(galleryItem);
     }
 }
 
@@ -127,28 +151,28 @@ function addTransformOrigin() {
     const width = window.innerWidth;
     if(width > 1400){
         if(galleryItems.length % 4 === 0){
-            bottomLeft(galleryItems[galleryItems.length - 4]);
+            setOrigin(galleryItems[galleryItems.length - 4], "bottomLeft");
             for(let i = 3; i > 1; i--){
-                bottom(galleryItems[galleryItems.length - i]);
+                setOrigin(galleryItems[galleryItems.length - i], "bottom");
             }
-            bottomRight(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
         }
         else if(galleryItems.length % 4 === 3) {
-            bottomLeft(galleryItems[galleryItems.length - 3]);
+            setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
             for(let i = 2; i > 0; i--){
-                bottom(galleryItems[galleryItems.length - i]);
+                setOrigin(galleryItems[galleryItems.length - i], "bottom");
             }
             createEmptyItem();
         }
         else if(galleryItems.length % 4 === 2) {
-            bottomLeft(galleryItems[galleryItems.length - 2]);
-            bottom(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
+            setOrigin(galleryItems[galleryItems.length - 1], "bottom");
             for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
         }
         else {
-            bottomLeft(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 3; i++){
                 createEmptyItem();
             }
@@ -156,17 +180,17 @@ function addTransformOrigin() {
     }
     else if (width > 1000){
         if(galleryItems.length % 3 === 0){
-            bottomLeft(galleryItems[galleryItems.length - 3]);
-            bottom(galleryItems[galleryItems.length - 2]);
-            bottomRight(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
+            setOrigin(galleryItems[galleryItems.length - 2], "bottom");
+            setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
         }
         else if(galleryItems.length % 3 === 2){
-            bottomLeft(galleryItems[galleryItems.length - 2]);
-            bottom(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
+            setOrigin(galleryItems[galleryItems.length - 1], "bottom");
             createEmptyItem()
         }
         else {
-            bottomLeft(galleryItems[galleryItems.length - 1]);
+            setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
