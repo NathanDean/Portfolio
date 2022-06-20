@@ -1,5 +1,7 @@
-// Selects title/menu div and explore h3
+// Tracks width of browser window
 let width = window.innerWidth;
+
+// Selects elements
 const body = document.querySelector("body");
 const title = document.querySelector("#indexTitle");
 const menu = document.querySelector("#indexMenu");
@@ -79,6 +81,7 @@ goHome.addEventListener("click", function(){
     }
 })
 
+// Takes user to About page on clicking body when screen is too narrow to display menu
 function redirect(){
     location.href = "about"
 }
@@ -87,6 +90,7 @@ if(width < 1200){
     body.addEventListener("click", redirect);
 }
 
+// Checks window width on resize and adds or removes redirect event listener accordingly
 window.addEventListener("resize", function(){
     width = window.innerWidth;
     if(width < 1200){
