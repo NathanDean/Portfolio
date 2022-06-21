@@ -51,54 +51,51 @@ const textStyles = [
     "full"
 ];
 
+// Stores information about elements needed to build galleryItems
+const galleryItemElements = [
+    {
+        name: "galleryItem",
+        type: "div",
+        styles: galleryItemStyles
+    },
+    {
+        name: "contentWrapper",
+        type: "div",
+        styles: contentWrapperStyles
+    },
+    {
+        name: "textContainer",
+        type: "div",
+        styles: textContainerStyles
+    },
+    {
+        name: "title",
+        type: "h2",
+        styles: textStyles
+    },
+    {
+        name: "languageHeading",
+        type: "h4",
+        styles: textStyles
+    },
+    {
+        name: "gitHubLink",
+        type: "a",
+        styles: textStyles
+    }
+];
+
+// Creates element using templates in galleryItemElements array
+function createElement(type){
+    const element = document.createElement(type);
+    return element;
+}
+
 // Adds styles to element from relevant array
 function addStyles(element, styles){
     for(let style of styles){
         element.classList.add(style);
     }
-}
-
-// Creates + styles galleryItem
-function createGalleryItem(){
-    const galleryItem = document.createElement("div");    
-    addStyles(galleryItem, galleryItemStyles);
-    return galleryItem;
-}
-
-// Creates + styles contentWrapper
-function createContentWrapper(){
-    const contentWrapper = document.createElement("div");
-    addStyles(contentWrapper, contentWrapperStyles);
-    return contentWrapper;
-}
-
-// Creates + styles textContainer
-function createTextContainer(){
-    const textContainer  = document.createElement("div");
-    addStyles(textContainer, textContainerStyles);
-    return textContainer;
-}
-
-// Creates + styles title
-function createTitle(){
-    const title = document.createElement("h2");
-    addStyles(title, textStyles);
-    return title;
-}
-
-// Creates + styles languageHeading
-function createLanguageHeading(){
-    const languageHeading = document.createElement("h4");
-    addStyles(languageHeading, textStyles);
-    return languageHeading;
-}
-
-// Creates + styles gitHubLink
-function createGitHubLink(){
-    const gitHubLink = document.createElement("a");
-    addStyles(gitHubLink, textStyles);
-    gitHubLink.innerText = "GitHub";
-    return gitHubLink;
 }
 
 // Sets transform origin of gallery items
@@ -109,32 +106,33 @@ function setOrigin(element, origin){
 // Pushes gallery item to array
 function pushItem(item){
     galleryItems.push(item);
-};
-
-// Creates empty item to fill space in gallery
-function createEmptyItem(){
-    const emptyItem = document.createElement("div");
-    addStyles(emptyItem, emptyItemStyles)
-    pushItem(emptyItem);
 }
 
-// Creates and styles gallery items + content (planning to refactor into separate functions)
+// Iterates through projects array and creates corresponding galleryItem for each
 function createItems() {
     for(let i = projects.length - 1; i >= 0; i--){
-        
-        // Creates + styles galleryItem and descendent elements
-        const galleryItem = createGalleryItem();
-        const contentWrapper = createContentWrapper();
-        const textContainer = createTextContainer();
-        const title = createTitle();
-        const languageHeading = createLanguageHeading();
-        const gitHubLink = createGitHubLink();
+
+        // Iterates through galleryItemElements array to create and style elements for each gallery item
+        const elements = galleryItemElements.map(element => {
+            const newElement = createElement(element.type);
+            addStyles(newElement, element.styles);
+            return newElement;
+        });
+
+        // Saves elements to corresponding variables
+        const galleryItem = elements[0];
+        const contentWrapper = elements[1];
+        const textContainer = elements[2];
+        const title = elements[3];
+        const languageHeading = elements[4];
+        const gitHubLink = elements[5];
 
         // Adds content to elements
         galleryItem.style.backgroundImage = `url(${projects[i].image})`;
         title.textContent = projects[i].title;
         languageHeading.textContent = projects[i].language;
         gitHubLink.setAttribute("href", projects[i].github);
+        gitHubLink.innerText = "GitHub";
 
         // Appends elements to parents
         textContainer.append(title, languageHeading, gitHubLink);
@@ -146,10 +144,18 @@ function createItems() {
     }
 }
 
+// Creates empty item to fill space in gallery
+function createEmptyItem(){
+    const emptyItem = document.createElement("div");
+    addStyles(emptyItem, emptyItemStyles);
+    pushItem(emptyItem);
+}
+
 // Checks number of items in bottom row of gallery and sets transform-origin according to their position, then fills remaining space with empty items
 function addTransformOrigin() {
     const width = window.innerWidth;
     if(width > 1400){
+        // 4/4 items in row
         if(galleryItems.length % 4 === 0){
             setOrigin(galleryItems[galleryItems.length - 4], "bottomLeft");
             for(let i = 3; i > 1; i--){
@@ -157,6 +163,7 @@ function addTransformOrigin() {
             }
             setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
         }
+        // 3/4 items in row
         else if(galleryItems.length % 4 === 3) {
             setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
             for(let i = 2; i > 0; i--){
@@ -164,6 +171,7 @@ function addTransformOrigin() {
             }
             createEmptyItem();
         }
+        // 2/4 items in row
         else if(galleryItems.length % 4 === 2) {
             setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
             setOrigin(galleryItems[galleryItems.length - 1], "bottom");
@@ -171,6 +179,7 @@ function addTransformOrigin() {
                 createEmptyItem();
             }
         }
+        // 1/4 items in row
         else {
             setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 3; i++){
@@ -179,16 +188,19 @@ function addTransformOrigin() {
         }
     }
     else if (width > 1000){
+        // 3/3 items in row
         if(galleryItems.length % 3 === 0){
             setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
             setOrigin(galleryItems[galleryItems.length - 2], "bottom");
             setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
         }
+        // 2/3 items in row
         else if(galleryItems.length % 3 === 2){
             setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
             setOrigin(galleryItems[galleryItems.length - 1], "bottom");
             createEmptyItem()
         }
+        // 1/3 items in row
         else {
             setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 2; i++){
@@ -197,13 +209,14 @@ function addTransformOrigin() {
         }
     }
     else if (width > 800){
+        // 1/2 items in row
         if(galleryItems.length % 2 === 1){
             createEmptyItem();
         }
     }
 }
 
-// Calls functions to create and style gallery items, then loads them to array, before looping over array and appending each item to document
+// Calls functions to create, style and load galleryItems to array, before looping over array and appending each item to document
 function loadItems() {
     createItems();
     addTransformOrigin();
