@@ -1,50 +1,50 @@
-require("dotenv").config();
+// require("dotenv").config();
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
+// const { MongoClient, ServerApiVersion } = require("mongodb");
 
-async function findProjects(client) {
+// async function findProjects(client) {
     
-    const cursor = await client.db("portfolio").collection("projects").find({});
+//     const cursor = await client.db("portfolio").collection("projects").find({});
 
-    const results = await cursor.toArray();
+//     const results = await cursor.toArray();
 
-    return results;
+//     return results;
 
-}
+// }
 
-async function main() {
+// async function main() {
     
-    const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.l2ybok8.mongodb.net/?retryWrites=true&w=majority`;
+//     const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.l2ybok8.mongodb.net/?retryWrites=true&w=majority`;
     
-    const client = new MongoClient(uri, { 
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        serverApi: ServerApiVersion.v1 
-    });
+//     const client = new MongoClient(uri, { 
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//         serverApi: ServerApiVersion.v1 
+//     });
        
-    try{
+//     try{
         
-        await client.connect();
+//         await client.connect();
         
-        var results = await findProjects(client);
+//         var results = await findProjects(client);
 
-    }
-    catch(error) {
+//     }
+//     catch(error) {
 
-        console.log(error);
+//         console.log(error);
 
-    }
-    finally {
+//     }
+//     finally {
 
-        await client.close();
+//         await client.close();
 
-        return results;
+//         return results;
 
-    }
+//     }
 
-}
+// }
 
-main()
-.then((data) => {
-    console.log(data)
-});
+// main()
+// .then((data) => {
+//     console.log(data)
+// });

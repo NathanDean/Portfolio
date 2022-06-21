@@ -7,83 +7,71 @@ const gallery = document.querySelector("#gallery");
 // Stores items to be added to gallery
 let galleryItems = [];
 
-// Stores styles for galleryItem
-const galleryItemStyles = [
-    "gallerySquare",
-    "galleryContentItem",
-    "flex",
-    "center",
-    "alignCenter",
-    "contentCenter",
-    "wrap"
-];
+const styles = {
+    galleryItem: [
+        "gallerySquare",
+        "galleryContentItem",
+        "flex",
+        "center",
+        "alignCenter",
+        "contentCenter",
+        "wrap"
+    ],
+    contentWrapper: [
+        "galleryItemContentWrapper",
+        "flex",
+        "alignCenter",
+        "full",
+        "fullHeight"
+    ],
+    textContainer: [
+        "galleryItemTextContainer",
+        "flex",
+        "wrap",
+        "around",
+        "contentAround",
+        "full",
+        "halfHeight",
+        "transparent",
+        "centerText"
+    ],
+    text: [
+        "full",
 
-// Stores styles for emptyItem
-const emptyItemStyles = [
-    "gallerySquare",
-    "invisible"
-];
+    ],
+    emptyItem: [
+        "gallerySquare",
+        "invisible"
+    ]
+};
 
-// Stores styles for contentWrapper
-const contentWrapperStyles = [
-    "galleryItemContentWrapper",
-    "flex",
-    "alignCenter",
-    "full",
-    "fullHeight"
-];
-
-// Stores styles for textContainer
-const textContainerStyles = [
-    "galleryItemTextContainer",
-    "flex",
-    "wrap",
-    "around",
-    "contentAround",
-    "full",
-    "halfHeight",
-    "transparent",
-    "centerText"
-];
-
-// Stores styles for text elements
-const textStyles = [
-    "full"
-];
-
-// Stores information about elements needed to build galleryItems
-const galleryItemElements = [
-    {
-        name: "galleryItem",
+// Templates for elements needed to build items in gallery
+const galleryItemElements = {
+    galleryItem: {
         type: "div",
-        styles: galleryItemStyles
+        styles: styles.galleryItem
     },
-    {
-        name: "contentWrapper",
+    contentWrapper: {
         type: "div",
-        styles: contentWrapperStyles
+        styles: styles.contentWrapper
     },
-    {
-        name: "textContainer",
+    textContainer: {
         type: "div",
-        styles: textContainerStyles
+        styles: styles.textContainer
     },
-    {
-        name: "title",
+    title: {
         type: "h2",
-        styles: textStyles
+        styles: styles.text
     },
-    {
-        name: "languageHeading",
+    languageHeading: {
         type: "h4",
-        styles: textStyles
+        styles: styles.text
     },
-    {
-        name: "gitHubLink",
+    gitHubLink: {
         type: "a",
-        styles: textStyles
+        styles: styles.text
     }
-];
+};
 
 // Creates element using templates in galleryItemElements array
 function createElement(type){
@@ -112,12 +100,15 @@ function pushItem(item){
 function createItems() {
     for(let i = projects.length - 1; i >= 0; i--){
 
-        // Iterates through galleryItemElements array to create and style elements for each gallery item
-        const elements = galleryItemElements.map(element => {
-            const newElement = createElement(element.type);
-            addStyles(newElement, element.styles);
-            return newElement;
-        });
+        // Stores elements needed to build galleryItem
+        const elements = [];
+        
+        // Iterates through galleryItemElements array to create and style elements, then pushes to elements array
+        for(let key of Object.keys(galleryItemElements)){
+            const newElement = createElement(galleryItemElements[key].type);
+            addStyles(newElement, galleryItemElements[key].styles)
+            elements.push(newElement);
+        }
 
         // Saves elements to corresponding variables
         const galleryItem = elements[0];
@@ -147,7 +138,7 @@ function createItems() {
 // Creates empty item to fill space in gallery
 function createEmptyItem(){
     const emptyItem = document.createElement("div");
-    addStyles(emptyItem, emptyItemStyles);
+    addStyles(emptyItem, styles.emptyItem);
     pushItem(emptyItem);
 }
 
