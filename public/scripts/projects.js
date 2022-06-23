@@ -26,18 +26,17 @@ const projects = [
         image: "./images/perlin.JPG"
     },
     {
-        title: "Portfolio",
-        language: "JavaScript/Node.js/Express",
-        github: "https://github.com/NathanDean/Portfolio",
-        image: "./images/portfolio.JPG"
-    },
-    {
         title: "Todo app",
         language: "React",
         github: "https://github.com/NathanDean/reactTodo",
         image: "./images/todo.JPG"
+    },
+    {
+        title: "Portfolio",
+        language: "JavaScript/Node.js/Express",
+        github: "https://github.com/NathanDean/Portfolio",
+        image: "./images/portfolio.JPG"
     }
-
 ];
 
 // class Project {

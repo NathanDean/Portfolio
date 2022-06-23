@@ -28,8 +28,8 @@ app.post("/", function(req, res){
     });
 
     const mailOptions = {
-        from: "nathan@nathandean.co.uk",
-        to: "nathan@nathandean.co.uk",
+        from:  process.env.USER,
+        to:  process.env.USER,
         subject: `Message from ${req.body.email}: ${req.body.subject}`,
         text: req.body.message
     };
