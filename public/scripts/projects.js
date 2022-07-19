@@ -38,7 +38,7 @@ const projects = [
         image: "./images/portfolio.JPG"
     },
     {
-        title: "Video Search",
+        title: "YouTube API Video Search",
         language: "React",
         github: "https://github.com/NathanDean/ReactVideoSearch",
         image: "./images/video.JPG"
