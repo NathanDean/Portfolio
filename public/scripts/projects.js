@@ -36,6 +36,12 @@ const projects = [
         language: "JavaScript/Node.js/Express",
         github: "https://github.com/NathanDean/Portfolio",
         image: "./images/portfolio.JPG"
+    },
+    {
+        title: "Video Search",
+        language: "React",
+        github: "https://github.com/NathanDean/ReactVideoSearch",
+        image: "./images/video.JPG"
     }
 ];
 

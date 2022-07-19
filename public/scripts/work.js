@@ -144,56 +144,144 @@ function createEmptyItem(){
 
 // Checks number of items in bottom row of gallery and sets transform-origin according to their position, then fills remaining space with empty items
 function addTransformOrigin() {
+
+    // if(width > 1400){
+        
+    //     // 4/4 items in row
+    //     if(numOfGalleryItems % 4 === 0){
+    //         setOrigin(galleryItems[numOfGalleryItems - 4], "bottomLeft");
+    //         for(let i = 3; i > 1; i--){
+    //             setOrigin(galleryItems[numOfGalleryItems - i], "bottom");
+    //         }
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottomRight");
+    //     }
+    //     // 3/4 items in row
+    //     else if(numOfGalleryItems % 4 === 3) {
+    //         setOrigin(galleryItems[numOfGalleryItems - 3], "bottomLeft");
+    //         for(let i = 2; i > 0; i--){
+    //             setOrigin(galleryItems[numOfGalleryItems - i], "bottom");
+    //         }
+    //         createEmptyItem();
+    //     }
+    //     // 2/4 items in row
+    //     else if(numOfGalleryItems % 4 === 2) {
+    //         setOrigin(galleryItems[numOfGalleryItems - 2], "bottomLeft");
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottom");
+    //         for(let i = 0; i < 2; i++){
+    //             createEmptyItem();
+    //         }
+    //     }
+    //     // 1/4 items in row
+    //     else {
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottomLeft");
+    //         for(let i = 0; i < 3; i++){
+    //             createEmptyItem();
+    //         }
+    //     }
+    // }
+    // else if (width > 1000){
+    //     // 3/3 items in row
+    //     if(numOfGalleryItems % 3 === 0){
+    //         setOrigin(galleryItems[numOfGalleryItems - 3], "bottomLeft");
+    //         setOrigin(galleryItems[numOfGalleryItems - 2], "bottom");
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottomRight");
+    //     }
+    //     // 2/3 items in row
+    //     else if(numOfGalleryItems % 3 === 2){
+    //         setOrigin(galleryItems[numOfGalleryItems - 2], "bottomLeft");
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottom");
+    //         createEmptyItem()
+    //     }
+    //     // 1/3 items in row
+    //     else {
+    //         setOrigin(galleryItems[numOfGalleryItems - 1], "bottomLeft");
+    //         for(let i = 0; i < 2; i++){
+    //             createEmptyItem();
+    //         }
+    //     }
+    // }
+    // else if (width > 800){
+    //     // 1/2 items in row
+    //     if(numOfGalleryItems % 2 === 1){
+    //         createEmptyItem();
+    //     }
+    // }
+
     const width = window.innerWidth;
+    const numOfGalleryItems = galleryItems.length;
+
+    let cols;
+
     if(width > 1400){
+        cols = 4
+    }
+    else if (width > 1000) {
+        cols = 3
+    } else {
+        cols = 2
+    }
+
+    const incompleteRowLength = numOfGalleryItems % cols;
+
+    let firstItem;
+    const lastItem = galleryItems[numOfGalleryItems - 1];
+    let otherItems;
+
+    if (incompleteRowLength === 0) {
+        firstItem = galleryItems[numOfGalleryItems - cols];
+        otherItems = cols - 2;
+    }
+    else {
+        firstItem = galleryItems[numOfGalleryItems - incompleteRowLength];
+        otherItems = incompleteRowLength - 2;
+    }
+
+    setOrigin(firstItem, "bottomLeft");
+
+    if(cols === 4){
+        
         // 4/4 items in row
-        if(galleryItems.length % 4 === 0){
-            setOrigin(galleryItems[galleryItems.length - 4], "bottomLeft");
-            for(let i = 3; i > 1; i--){
-                setOrigin(galleryItems[galleryItems.length - i], "bottom");
+        if(incompleteRowLength === 0){
+            for(let i = 0; i < otherItems; i++){
+                setOrigin(galleryItems[numOfGalleryItems - i], "bottom");
             }
-            setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
+            setOrigin(lastItem, "bottomRight");
         }
         // 3/4 items in row
-        else if(galleryItems.length % 4 === 3) {
-            setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
-            for(let i = 2; i > 0; i--){
-                setOrigin(galleryItems[galleryItems.length - i], "bottom");
+        else if(incompleteRowLength === 3) {
+            for(let i = 0; i < otherItems; i++){
+                setOrigin(galleryItems[numOfGalleryItems - i], "bottom");
             }
             createEmptyItem();
         }
         // 2/4 items in row
-        else if(galleryItems.length % 4 === 2) {
-            setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
-            setOrigin(galleryItems[galleryItems.length - 1], "bottom");
+        else if(incompleteRowLength === 2) {
+            setOrigin(lastItem, "bottom");
             for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
         }
         // 1/4 items in row
         else {
-            setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 3; i++){
                 createEmptyItem();
             }
         }
     }
-    else if (width > 1000){
+    else if (cols === 3){
         // 3/3 items in row
-        if(galleryItems.length % 3 === 0){
-            setOrigin(galleryItems[galleryItems.length - 3], "bottomLeft");
-            setOrigin(galleryItems[galleryItems.length - 2], "bottom");
-            setOrigin(galleryItems[galleryItems.length - 1], "bottomRight");
+        if(numOfGalleryItems % 3 === 0){
+            setOrigin(galleryItems[numOfGalleryItems - 2], "bottom");
+            setOrigin(lastItem, "bottomRight");
         }
         // 2/3 items in row
-        else if(galleryItems.length % 3 === 2){
-            setOrigin(galleryItems[galleryItems.length - 2], "bottomLeft");
-            setOrigin(galleryItems[galleryItems.length - 1], "bottom");
+        else if(numOfGalleryItems % 3 === 2){
+
+            setOrigin(lastItem, "bottom");
             createEmptyItem()
         }
         // 1/3 items in row
         else {
-            setOrigin(galleryItems[galleryItems.length - 1], "bottomLeft");
             for(let i = 0; i < 2; i++){
                 createEmptyItem();
             }
@@ -201,10 +289,11 @@ function addTransformOrigin() {
     }
     else if (width > 800){
         // 1/2 items in row
-        if(galleryItems.length % 2 === 1){
+        if(numOfGalleryItems % 2 === 1){
             createEmptyItem();
         }
     }
+
 }
 
 // Calls functions to create, style and load galleryItems to array, before looping over array and appending each item to document

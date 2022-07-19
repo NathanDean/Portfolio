@@ -15,8 +15,6 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-    console.log(req.body);
-
     const transporter = nodemailer.createTransport({
 
         host: "smtp.hostinger.com",
