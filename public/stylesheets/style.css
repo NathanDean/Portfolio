@@ -259,14 +259,19 @@
                     font-size: 2rem;
                 }
 
-                .galleryContentItem h2, .galleryContentItem h4, .galleryContentItem a {
+                .galleryContentItem h2, .galleryContentItem h4 {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .galleryContentItem h4, .galleryContentItem a {
+                .galleryContentItem h4, .linkContainer, .linkContainer a {
                     font-size: 1.5rem;
+                }
+
+                .galleryLink {
+                    color: red;
+                    padding: 0 .25rem;
                 }
                 
                 .galleryItemContentWrapper {

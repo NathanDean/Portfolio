@@ -35,9 +35,19 @@ const styles = {
         "transparent",
         "centerText"
     ],
+    linkContainer: [
+        "linkContainer",
+        "flex",
+        "wrap",
+        "center",
+        "full"
+    ],
     text: [
         "full",
-
+    ],
+    galleryLink: [
+        "galleryLink",
+        "full"
     ],
     emptyItem: [
         "gallerySquare",
@@ -67,9 +77,17 @@ const galleryItemElements = {
         type: "h4",
         styles: styles.text
     },
+    linkContainer: {
+        type: "div",
+        styles: styles.linkContainer
+    },
+    appLink: {
+        type: "a",
+        styles: styles.galleryLink
+    },
     gitHubLink: {
         type: "a",
-        styles: styles.text
+        styles: styles.galleryLink
     }
 };
 
@@ -116,17 +134,28 @@ function createItems() {
         const textContainer = elements[2];
         const title = elements[3];
         const languageHeading = elements[4];
-        const gitHubLink = elements[5];
+        const linkContainer = elements[5]
+        const appLink = elements[6];
+        const gitHubLink = elements[7];
 
         // Adds content to elements
         galleryItem.style.backgroundImage = `url(${projects[i].image})`;
         title.textContent = projects[i].title;
         languageHeading.textContent = projects[i].language;
+        if (projects[i].appLink) {
+            appLink.setAttribute("href", projects[i].appLink)
+        }
         gitHubLink.setAttribute("href", projects[i].github);
         gitHubLink.innerText = "GitHub";
+        if(appLink.href !== ""){
+            linkContainer.innerHTML = `<a href = "${appLink}">View app</$a> | <a href = "${gitHubLink}">GitHub</a>`
+        } else {
+            linkContainer.innerHTML = `<a href = "${gitHubLink}">GitHub</a>`
+        }
+        
 
         // Appends elements to parents
-        textContainer.append(title, languageHeading, gitHubLink);
+        textContainer.append(title, languageHeading, linkContainer);
         contentWrapper.append(textContainer);
         galleryItem.append(contentWrapper);
 
@@ -209,6 +238,8 @@ function addTransformOrigin() {
             createEmptyItem();
         }
     }
+
+// In progress refactoring of addTransformOrigin
 
 //     let cols;
 

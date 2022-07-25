@@ -28,6 +28,7 @@ const projects = [
     {
         title: "Todo app",
         language: "React",
+        appLink: "https://whispering-cliffs-16765.herokuapp.com/",
         github: "https://github.com/NathanDean/reactTodo",
         image: "./images/todo.JPG"
     },
@@ -40,6 +41,7 @@ const projects = [
     {
         title: "YouTube API Video Search",
         language: "React",
+        appLink: "https://peaceful-atoll-49366.herokuapp.com",
         github: "https://github.com/NathanDean/ReactVideoSearch",
         image: "./images/video.JPG"
     }
