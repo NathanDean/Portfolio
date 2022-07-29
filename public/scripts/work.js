@@ -148,7 +148,7 @@ function createItems() {
         gitHubLink.setAttribute("href", projects[i].github);
         gitHubLink.innerText = "GitHub";
         if(appLink.href !== ""){
-            linkContainer.innerHTML = `<a href = "${appLink}">View app</$a> | <a href = "${gitHubLink}">GitHub</a>`
+            linkContainer.innerHTML = `<a href = "${appLink}">View app</a> | <a href = "${gitHubLink}">GitHub</a>`
         } else {
             linkContainer.innerHTML = `<a href = "${gitHubLink}">GitHub</a>`
         }
