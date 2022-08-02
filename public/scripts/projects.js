@@ -33,6 +33,13 @@ const projects = [
         image: "./images/todo.JPG"
     },
     {
+        title: "Redux Comments App",
+        language: "React",
+        appLink: "https://young-reaches-78823.herokuapp.com/",
+        github: "https://github.com/NathanDean/comments",
+        image: "./images/comments.JPG"
+    },
+    {
         title: "Portfolio",
         language: "JavaScript/Node.js/Express",
         github: "https://github.com/NathanDean/Portfolio",
