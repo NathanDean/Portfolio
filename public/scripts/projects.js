@@ -26,14 +26,14 @@ const projects = [
         image: "./images/perlin.JPG"
     },
     {
-        title: "Todo app",
+        title: "Todo App",
         language: "React",
         appLink: "https://whispering-cliffs-16765.herokuapp.com/",
         github: "https://github.com/NathanDean/reactTodo",
         image: "./images/todo.JPG"
     },
     {
-        title: "Redux Comments App",
+        title: "Redux Comments Exercise",
         language: "React",
         appLink: "https://young-reaches-78823.herokuapp.com/",
         github: "https://github.com/NathanDean/comments",
