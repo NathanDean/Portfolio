@@ -2,6 +2,12 @@
 const projects = [
 
     {
+        title: "Smoking Text",
+        language: "CSS",
+        github: "https://github.com/NathanDean/WebDevBootcamp/tree/main/Week%202/Smoke",
+        image: "./images/smoke.JPG"
+    },
+    {
         title: "Mouse Tracker",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/MouseTracking",
@@ -12,12 +18,6 @@ const projects = [
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/PointillistEffect",
         image: "./images/pointillism.JPG"
-    },
-    {
-        title: "Smoking Text",
-        language: "CSS",
-        github: "https://github.com/NathanDean/WebDevBootcamp/tree/main/Week%202/Smoke",
-        image: "./images/smoke.JPG"
     },
     {
         title: "Perlin Terrain",
@@ -40,17 +40,17 @@ const projects = [
         image: "./images/comments.JPG"
     },
     {
-        title: "Portfolio",
-        language: "JavaScript/Node.js/Express",
-        github: "https://github.com/NathanDean/Portfolio",
-        image: "./images/portfolio.JPG"
-    },
-    {
         title: "YouTube API Video Search",
         language: "React",
         appLink: "https://peaceful-atoll-49366.herokuapp.com",
         github: "https://github.com/NathanDean/ReactVideoSearch",
         image: "./images/video.JPG"
+    },
+    {
+        title: "Portfolio",
+        language: "JavaScript/Node.js/Express",
+        github: "https://github.com/NathanDean/Portfolio",
+        image: "./images/portfolio.JPG"
     }
 ];
 
