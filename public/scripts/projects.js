@@ -51,6 +51,13 @@ const projects = [
         language: "JavaScript/Node.js/Express",
         github: "https://github.com/NathanDean/Portfolio",
         image: "./images/portfolio.JPG"
+    },
+    {
+        title: "Moments social media app",
+        language: "React/Node.js/Express/MongoDB",
+        appLink: "https://sheltered-reef-45999.herokuapp.com/",
+        github: "#",
+        image: "./images/moments.JPG"
     }
 ];
 
