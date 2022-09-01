@@ -56,7 +56,7 @@ const projects = [
         title: "Moments social media app",
         language: "React/Node.js/Express/MongoDB",
         appLink: "https://sheltered-reef-45999.herokuapp.com/",
-        github: "#",
+        github: "https://github.com/NathanDean/moments-photo-sharing-app",
         image: "./images/moments.JPG"
     }
 ];
