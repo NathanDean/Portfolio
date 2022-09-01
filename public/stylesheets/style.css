@@ -284,6 +284,10 @@
                     opacity: 1;
                 }
 
+                .galleryItemTextContainer * {
+                    overflow-wrap: break-word;
+                }
+
         /* Adds margin to top row of items in gallery */
 
             .galleryContentItem:nth-of-type(n+1):nth-of-type(-n+4) {
@@ -1163,7 +1167,7 @@
                     }
                     
         }
-        
+
     /* Mobile (landscape) */
 
         @media (orientation: landscape) and (max-height:450px) {
