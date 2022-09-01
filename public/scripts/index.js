@@ -1,5 +1,6 @@
 // Tracks width of browser window
 let width = window.innerWidth;
+let height = window.innerHeight;
 
 // Selects elements
 const body = document.querySelector("body");
@@ -81,10 +82,14 @@ goHome.addEventListener("click", function(){
     }
 })
 
-// Checks window width on resize and adds or removes <br> from title
+// Checks window width on load/resize and adds or removes <br> from title
+if(width < 450 || height < 450){
+    title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+}
+
 window.addEventListener("resize", function(){
     width = window.innerWidth;
-    if(width < 450){
+    if(width < 450 || height < 450){
             title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
     } else {
         title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';

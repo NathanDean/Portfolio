@@ -1206,6 +1206,22 @@
                     font-size: 1.125rem;
                 }
 
+            /* Index */
+
+                #indexTitle {
+                    top: 35%;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                #indexTitle h1 {
+                    font-size: 2.5rem;
+                }
+
+                #indexTitle, #indexTitle h3 {
+                    padding: 0;
+                }
+            
             /* Gallery */
 
                 .gallerySquare {
