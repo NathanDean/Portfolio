@@ -727,7 +727,25 @@
                     background-size: cover;
                 }
 
-                #indexTitle h1, #indexTitle h3 {
+                #indexMenu {
+                    position: absolute;
+                    bottom: 10%;
+                    
+                    display: flex;
+                    flex-direction: row;
+                    
+                    width: 100%;
+
+                    padding: 0 2.5rem;
+
+                    opacity: 1;
+                }
+
+                #indexMenu span {
+                    flex-basis: auto;
+                }
+
+                #indexTitle h1, #indexTitle h3, #indexMenu span a {
                     color: var(--offWhite);
                 }
 
@@ -953,7 +971,7 @@
                     font-size: 3.5rem;
                 }
 
-                #indexSubheading{
+                #indexSubheading, #indexMenu span a{
                     font-size: 1.75rem;
                 }
 
@@ -1014,7 +1032,7 @@
                     font-size: 3.5rem;
                 }
 
-                #indexTitle h3 {
+                #indexTitle h3, #indexMenu span a {
                     font-size: 1.75rem;
                 }
 
@@ -1055,7 +1073,7 @@
 
             /* Index */
 
-                #indexTitle {
+                #indexTitle, #indexMenu {
                     padding: 2.5rem;
                 }
                     
@@ -1063,7 +1081,7 @@
                     font-size: 3rem;
                 }
 
-                #indexTitle h3 {
+                #indexTitle h3, #indexMenu span a {
                     font-size: 1.5rem;
                 }
 
@@ -1099,6 +1117,26 @@
                         font-size: 1.5rem;
                     }
 
+                /* Index */
+
+                    #indexTitle {
+                        top: 30%;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    #indexTitle h1 {
+                        font-size: 2.5rem;
+                    }
+
+                    #indexTitle, #indexTitle h3 {
+                        padding: 0;
+                    }
+                
+                    #indexMenu {
+                        flex-direction: column;
+                    }
+
                 /* Gallery */
 
                     /* Resizes items in gallery to square */
@@ -1107,22 +1145,6 @@
                         height: 83vw;
                     }
                     
-        }
-
-    /* Mobile (large) */
-        
-        @media(max-width: 450px) and (min-height: 800px){
-            #indexTitle {
-                padding-left: 3.5rem;
-            }
-
-            #indexTitle h1 {
-                font-size: 3.5rem;
-            }
-
-            #indexTitle h3 {
-                font-size: 1.75rem;
-            }
         }
 
     /* Mobile (landscape) */
@@ -1189,12 +1211,12 @@
 
         /* Breakpoints
 
-    Three: 1400
-    Two: 1000
-    One (rectangle): 800
-    One (square): 450
-    
-    */
+            Three: 1400
+            Two: 1000
+            One (rectangle): 800
+            One (square): 450
+        
+        */
 
         @media (max-width: 1700px) and (min-width: 1500px), (max-width: 1200px) and (min-width: 1100px), (max-width: 900px) and (min-width: 800px), (max-width: 700px) and (min-width: 600px){
             .galleryContentItem h2 {
