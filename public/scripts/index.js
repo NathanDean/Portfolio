@@ -81,7 +81,7 @@ goHome.addEventListener("click", function(){
     }
 })
 
-// Checks window width on resize and adds or removes redirect event listener accordingly
+// Checks window width on resize and adds or removes <br> from title
 window.addEventListener("resize", function(){
     width = window.innerWidth;
     if(width < 450){
