@@ -1146,7 +1146,6 @@
                     }
 
                     #indexMenu {
-                        bottom: auto;
                         flex-direction: column;
                     }
 
@@ -1205,8 +1204,7 @@
 
             /* Index */
 
-                #indexTitle {
-                    top: 35%;
+                /* #indexTitle {
                     width: 100%;
                     text-align: center;
                 }
@@ -1217,6 +1215,33 @@
 
                 #indexTitle, #indexTitle h3 {
                     padding: 0;
+                } */
+
+                #titleMenuContainer {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                #indexTitle {
+                    position: static;
+                }
+            
+                #indexTitle {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                #indexTitle h1 {
+                    font-size: 2.5rem;
+                }
+
+                #indexTitle, #indexTitle h3, #indexMenu {
+                    padding: 0;
+                }
+
+                #indexMenu {
+                    bottom: 5%;
+                    flex-direction: row;
                 }
             
             /* Gallery */
