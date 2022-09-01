@@ -82,23 +82,26 @@ goHome.addEventListener("click", function(){
     }
 })
 
-// Checks window width on load/resize and adds or removes <br> from title
-if(width < 450 || height < 450){
+const removeBreak = () => {
     title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
 }
 
-window.addEventListener("resize", function(){
-    if(width < 450 || height < 450){
-            title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
-    } else {
-        title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
-    }
-});
+const addBreak = () => {
+    title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+}
 
-screen.orientation.addEventListener("change", function(){
+const toggleBreak = () => {
     if(width < 450 || height < 450){
-        title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+        removeBreak()
     } else {
-        title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+        addBreak()
     }
-})
+}
+
+// Checks window width on load/resize/rotate and adds or removes <br> from title
+
+width < 450 || height < 450 && removeBreak();
+
+window.addEventListener("resize", toggleBreak());
+
+screen.orientation.addEventListener("change", toggleBreak());
