@@ -88,10 +88,17 @@ if(width < 450 || height < 450){
 }
 
 window.addEventListener("resize", function(){
-    width = window.innerWidth;
     if(width < 450 || height < 450){
             title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
     } else {
         title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
     }
 });
+
+screen.orientation.addEventListener("change", function(){
+    if(width < 450 || height < 450){
+        title.innerHTML = '<h1 id="indexHeading">NATHAN DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+    } else {
+        title.innerHTML = '<h1 id="indexHeading">NATHAN<br>DEAN</h1><h3 id="indexSubheading">front-end developer</h3>';
+    }
+})
