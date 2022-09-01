@@ -285,7 +285,7 @@
                 }
 
                 .galleryItemTextContainer * {
-                    overflow-wrap: break-word;
+                    word-break: break-word;
                 }
 
         /* Adds margin to top row of items in gallery */
