@@ -41,7 +41,7 @@ const projects = [
     },
     {
         title: "YouTube API Video Search",
-        language: "React",
+        language: "React/TypeScript",
         appLink: "https://peaceful-atoll-49366.herokuapp.com",
         github: "https://github.com/NathanDean/ReactVideoSearch",
         image: "./images/video.JPG"
