@@ -528,6 +528,10 @@
                 height: 100%;
             }
 
+            .threeQuarterHeight {
+                height: 75%;
+            }
+
             .halfHeight {
                 height: 50%;
             }
@@ -1133,8 +1137,8 @@
                     }
                 
                     #indexTitle {
-                        width: 100%;
-                        text-align: center;
+                        width: auto;
+                        text-align: left;
                     }
 
                     #indexTitle h1 {
