@@ -52,6 +52,10 @@
             body, a, h1, h3, h4, label, input, textarea, button {
                 color: var(--darkGrey);
             }
+
+            #indexMenu span a, #homeImage div span a {
+                color: var(--offWhite)
+            }
     
         /* Size and spacing */
 
@@ -93,10 +97,6 @@
         a:hover, .ocean h3:hover {
             text-decoration: underline;
             text-decoration-thickness: 3px;
-        }
-
-        a, h3 {
-            padding-left: .3rem;
         }
 
     /* Navbar */
@@ -183,17 +183,13 @@
                 }
 
 /* Index */
-                
-    #indexMenu span {
-        margin: 2rem 0;
-    }
     
-    #indexTitle, #indexMenu {
+    #indexTitle {
         padding-left: 5rem;
     }
 
-    #indexTitle, #indexMenu, #explore, #goHome {
-        transition: opacity 900ms;
+    #indexTitle h3 {
+        padding-left: .3rem;
     }
 
 /* About */
@@ -735,16 +731,25 @@
                     background-size: cover;
                 }
 
+                #titleMenuContainer {
+                    justify-content: center;
+                }
+                
+                #indexTitle {
+                    padding: 0;
+                }
+
                 #indexMenu {
                     position: absolute;
                     bottom: 10%;
                     
                     display: flex;
                     flex-direction: row;
+                    justify-content: space-between;
                     
                     width: 100%;
 
-                    padding: 0 2.5rem;
+                    padding: 0 .3rem;
 
                     opacity: 1;
                 }
@@ -753,7 +758,11 @@
                     flex-basis: auto;
                 }
 
-                #indexTitle h1, #indexTitle h3, #indexMenu span a {
+                #indexTitle, #indexMenu {
+                    width: 80%;
+                }
+
+                #indexTitle h1, #indexTitle h3 {
                     color: var(--offWhite);
                 }
 
@@ -1008,10 +1017,6 @@
                         margin-top: 0;
                     }
 
-            /* About and Contact */
-
-
-
         }
 
         @media(max-width: 700px){
@@ -1080,10 +1085,6 @@
                     }
 
             /* Index */
-
-                #indexTitle, #indexMenu {
-                    padding: 2.5rem;
-                }
                     
                 #indexTitle h1 {
                     font-size: 3rem;
@@ -1132,20 +1133,30 @@
                         justify-content: space-evenly;
                     }
 
+                    #indexTitle {
+                        padding: 0;
+                    }
+                    
                     #indexTitle h1 {
                         font-size: 2.5rem;
                     }
 
+                    #indexTitle h3 {
+                        padding: 0;
+                    }
+
                     #indexMenu {
                         flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
                     }
 
-                    #indexMenu span:nth-of-type(1) {
-                        margin-top: 0;
+                    #indexMenu span {
+                        padding: .75rem 0;
                     }
 
-                    #indexMenu span:nth-of-type(3) {
-                        margin-bottom: 0;
+                    #indexTitle, #indexMenu {
+                        width: 85%;
                     }
 
                 /* Gallery */
@@ -1158,6 +1169,40 @@
                     
         }
 
+    /* Mobile (thin) */
+
+        @media(max-width: 365px) {
+            
+            #indexTitle h1 {
+                font-size: 2.4rem;
+            }
+            
+            #indexTitle h3, #indexMenu span a {
+                font-size: 1.4rem;
+            }
+
+        }
+
+        @media(max-width: 350px) {
+            
+            #indexTitle h3, #indexMenu span a {
+                font-size: 1.3rem;
+            }
+
+        }
+
+        @media(max-width: 330px) {
+            
+            #indexTitle h1 {
+                font-size: 2.3rem;
+            }
+            
+            #indexTitle h3, #indexMenu span a {
+                font-size: 1.2rem;
+            }
+
+        }
+    
     /* Mobile (landscape) */
 
         @media (orientation: landscape) and (max-height:450px) {
@@ -1195,44 +1240,30 @@
 
             /* Index */
 
-                /* #indexTitle {
-                    width: 100%;
-                    text-align: center;
+                #titleMenuContainer {
+                    justify-content: center;
                 }
 
                 #indexTitle h1 {
-                    font-size: 2.5rem;
+                    font-size: 3rem;
                 }
 
                 #indexTitle, #indexTitle h3 {
                     padding: 0;
-                } */
-
-                #titleMenuContainer {
-                    flex-direction: column;
-                    justify-content: center;
                 }
 
                 #indexTitle {
-                    position: static;
-                }
-            
-                #indexTitle {
-                    width: 100%;
-                    text-align: center;
-                }
-
-                #indexTitle h1 {
-                    font-size: 2.5rem;
-                }
-
-                #indexTitle, #indexTitle h3, #indexMenu {
-                    padding: 0;
+                    padding-bottom: .5rem;
                 }
 
                 #indexMenu {
-                    bottom: 5%;
                     flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0;
+                }
+
+                #indexTitle, #indexMenu {
+                    width:80%;
                 }
             
             /* Gallery */
@@ -1259,6 +1290,20 @@
                 }
 
         }
+
+    /* Mobile (landscape, thin) */
+
+    @media (orientation: landscape) and (max-height: 350px) {
+        
+        #indexTitle h1 {
+            font-size: 2.6rem;
+        }
+        
+        #indexTitle h3, #indexMenu span a {
+            font-size: 1.6rem;
+        }
+
+    }
 
     /* Text sizes for items in gallery. */
 
