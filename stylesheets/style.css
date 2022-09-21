@@ -1175,6 +1175,12 @@
                     .gallerySquare {
                         height: 83vw;
                     }
+
+                    /* Displays text automatically for devices where touch media query doesn't work */
+                    
+                    .galleryContentItem h2, .galleryContentItem h4, .galleryContentItem div {
+                        opacity: 1;
+                    }
                     
         }
 
