@@ -1132,21 +1132,8 @@
                         justify-content: space-evenly;
                     }
 
-                    #indexTitle, #indexMenu {
-                        position: static;
-                    }
-                
-                    #indexTitle {
-                        width: auto;
-                        text-align: left;
-                    }
-
                     #indexTitle h1 {
                         font-size: 2.5rem;
-                    }
-
-                    #indexTitle, #indexTitle h3, #indexMenu {
-                        padding: 0;
                     }
 
                     #indexMenu {

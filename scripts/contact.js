@@ -28,21 +28,4 @@ form.addEventListener("submit", function(event){
     }
     xhr.send(JSON.stringify(formData));
 
-    // fetch("/", {
-    //     method: "POST",
-    //     headers: {
-    //         "content-type": "application/json"
-    //     },
-    //     body: JSON.stringify(formData)
-    // })
-    // .then(() => {
-    //     alert("Message sent");
-    //     email.value = "";
-    //     subject.value = "";
-    //     message.value = "";
-    // })
-    // .catch(() => {
-    //     alert("Error, message not sent");
-    // })
-
 });
