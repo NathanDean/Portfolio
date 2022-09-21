@@ -71,7 +71,7 @@
                 font-size: 4rem;
             }
 
-            h3, a, label, button {
+            h3, a {
                 font-size: 2rem;
             }
             
@@ -82,6 +82,10 @@
             p, p a {
                 font-size: 1.25rem;
                 letter-spacing: .125rem;
+            }
+
+            label, button {
+                font-size: 1.8rem;
             }
 
     /* Links and menu items */
@@ -346,7 +350,6 @@
 
             background: var(--offWhite);
 
-            font-size: 2rem;
             outline: none;
         }
 
@@ -380,6 +383,14 @@
         input:hover, textarea:hover, button:hover {
             border: 1px solid var(--darkBlue);
             outline: none;
+        }
+
+        @media(min-width: 1200px) {
+
+            #contactTextContainer * {
+                font-size: 1.6rem;
+            }
+
         }
 
 /* Reusable classes */
@@ -750,8 +761,6 @@
                     width: 100%;
 
                     padding: 0 .3rem;
-
-                    opacity: 1;
                 }
 
                 #indexMenu span {
@@ -984,11 +993,11 @@
     
             /* Index */
 
-                #indexHeading{
+                #indexTitle h1{
                     font-size: 3.5rem;
                 }
 
-                #indexSubheading, #indexMenu span a{
+                #indexTitle h3, #indexMenu span a{
                     font-size: 1.75rem;
                 }
 
@@ -1273,8 +1282,12 @@
                     height: 71.5vh;
                 }
 
+                .galleryContentItem {
+                    margin-bottom: 1vw;
+                }
+
                 .galleryContentItem:nth-of-type(n+1):nth-of-type(-n+2) {
-                    margin-top: 1vw;
+                    margin-top: 0;
                 }
 
             /* Contact */
