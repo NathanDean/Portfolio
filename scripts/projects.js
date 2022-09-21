@@ -2,12 +2,6 @@
 const projects = [
 
     {
-        title: "Smoking Text",
-        language: "CSS",
-        github: "https://github.com/NathanDean/WebDevBootcamp/tree/main/Week%202/Smoke",
-        image: "./images/smoke.JPG"
-    },
-    {
         title: "Mouse Tracker",
         language: "Processing",
         github: "https://github.com/NathanDean/ProcessingProjects/tree/main/MouseTracking",
