@@ -1139,7 +1139,7 @@
 
                 /* Text */
 
-                    .header {
+                    .header, nav h3, nav a {
                         font-size: 1.5rem;
                     }
 
@@ -1283,7 +1283,7 @@
             
                 /* Text */
 
-                .header {
+                .header, nav h3, nav a {
                     font-size: 1.5rem;
                 }
 
