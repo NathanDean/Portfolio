@@ -1288,10 +1288,6 @@
                     #menu {
                         flex-direction: row;
                     }
-
-                    #menu.menuActive {
-                        top: 0;
-                    }
             
                 /* Text */
 
