@@ -1285,12 +1285,7 @@
                         padding-top: 1rem;
                     }
 
-                    #menu { 
-                        top: -100%;
-                        right: 0;
-
-                        width: 100%;
-
+                    #menu {
                         flex-direction: row;
                     }
 
