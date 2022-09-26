@@ -28,7 +28,7 @@ const styles = {
         "galleryItemTextContainer",
         "flex",
         "wrap",
-        "around",
+        "start",
         "contentAround",
         "full",
         "halfHeight",
@@ -39,11 +39,11 @@ const styles = {
         "linkContainer",
         "flex",
         "wrap",
-        "center",
-        "full"
+        "full",
+        "center"
     ],
     text: [
-        "full",
+        "full"
     ],
     galleryLink: [
         "galleryLink",

@@ -1207,11 +1207,26 @@
                     }
 
                     .galleryItemTextContainer {
+                        height: auto;
+                        
                         padding-left: .5rem;
                         
                         text-align: left;
                         
                         background-color: var(--offWhite);
+                    }
+
+                    .galleryItemTextContainer h2 {
+                        margin-top: .25rem;
+                    }
+                    
+                    .galleryItemTextContainer h4 {
+                        margin-top: .5rem;
+                        margin-bottom: .5rem;
+                    }
+
+                    .linkContainer {
+                        margin-bottom: .25rem;
                     }
 
                     .galleryItemTextContainer h2, .galleryItemTextContainer h4, .linkContainer {
@@ -1336,6 +1351,44 @@
                     margin-top: 0;
                 }
 
+                .galleryItemContentWrapper {
+                    width: 100%;
+
+                    background: none;
+                }
+
+                .galleryItemTextContainer {
+                    width: 50%;
+                    height: 100%;
+                    
+                    padding-left: .5rem;
+                    
+                    text-align: left;
+                    
+                    background-color: var(--offWhite);
+                }
+
+                .galleryItemTextContainer h2 {
+                    margin-top: .25rem;
+                }
+                
+                .galleryItemTextContainer h4 {
+                    margin-top: .5rem;
+                    margin-bottom: .5rem;
+                }
+
+                .linkContainer {
+                    margin-bottom: .25rem;
+                }
+
+                .galleryItemTextContainer h2, .galleryItemTextContainer h4, .linkContainer {
+                    justify-content: flex-start;
+                }
+                
+                .galleryContentItem h2, .galleryContentItem h4, .galleryContentItem div {
+                    opacity: 1;
+                }
+
             /* Contact */
 
                 #contactP {
@@ -1392,6 +1445,18 @@
 
             .galleryContentItem h4, .galleryContentItem a {
                 font-size: 1rem;
+            }
+        }
+
+        @media (max-width:450px) {
+            .galleryContentItem h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height:450px) {
+            .galleryContentItem h2 {
+                font-size: 1.5rem;
             }
         }
 
