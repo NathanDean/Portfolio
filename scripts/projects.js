@@ -55,24 +55,18 @@ const projects = [
     }
 ];
 
-// class Project {
-//     title;
-//     language;
-//     github;
-//     image;
+class Project {
+    title;
+    language;
+    github;
+    image;
 
-//     constructor(title, github, codepen, language, image){
-//             this.title = title;
-//             this.github = github;
-//             this.language = language;
-//             this.image = image;
-//         }
-// }
-
-// Loads sample projects into array (planning to connect to database in future)
-// for(let i = 0; i < 17; i++){
-//     const project = new Project("Perlin Terrain", "#", "#", "Processing", "images/perlin.JPG", false);
-//     projects.push(project);
-// }
+    constructor(title, github, codepen, language, image){
+            this.title = title;
+            this.github = github;
+            this.language = language;
+            this.image = image;
+        }
+}
 
 export default projects;

@@ -1,10 +1,22 @@
-const express = require("express");
-const app = express();
-
-const nodemailer = require("nodemailer");
 require("dotenv").config();
+const express = require("express");
+const nodemailer = require("nodemailer");
+
+// const Project = require("./models/project");
 
 const PORT = process.env.PORT || 5000;
+
+const app = express();
+
+// const mongoose = require("mongoose");
+// mongoose.connect(
+//     process.env.MONGO_URI, 
+//     { useNewUrlParser: true, useUnifiedTopology: true }
+// ).then(() => {
+//     console.log("Connected to database.")
+// }).catch(error => {
+//     console.log("Error connecting to database.", error)
+// });
 
 // Middleware
 app.use(express.static(__dirname));
@@ -49,6 +61,21 @@ app.get("/about", function(req, res){
 });
 
 app.get("/work", function(req, res){
+    // try {
+    
+    //     res.status(200).json({
+    //         data: postMessages,
+    //         currentPage: Number(page),
+    //         numberOfPages: Math.ceil(noOfPosts / LIMIT)
+    //     });
+
+    // } catch (error) {
+        
+
+
+    // }
+    
+    
     res.sendFile(__dirname + "/public/work.html");
 });
 
