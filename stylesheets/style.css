@@ -228,6 +228,14 @@
             
     /* Bio section */
 
+        #headshot {
+            float: right;
+
+            width: 55%;
+
+            padding: 0 1rem 2rem 2rem;
+        }
+    
         /* Bio text */
         
             p, p * {
