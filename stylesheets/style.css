@@ -1207,7 +1207,7 @@
                         justify-content: space-between;
                         align-items: flex-start;
 
-                        padding-top: 22.5rem;
+                        padding-top: 26rem;
                         padding-left: 0;
                     }
 
@@ -1217,6 +1217,18 @@
 
                     #indexTitle, #indexMenu {
                         width: 85%;
+                    }
+
+                    #icons {
+                        display: none;
+                    }
+
+                    #mobileIcons {
+                        display: block;
+                    }
+
+                    i {
+                        padding-right: 1.5rem;
                     }
 
                 /* Gallery */
