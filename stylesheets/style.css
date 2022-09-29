@@ -49,7 +49,7 @@
                 font-family: 'Outfit', sans-serif;
             }
 
-            body, a, h1, h3, h4, label, input, textarea, button {
+            body, a, h1, h3, h4, label, input, textarea, button, i {
                 color: var(--darkGrey);
             }
 
@@ -88,6 +88,10 @@
                 font-size: 1.8rem;
             }
 
+            i {
+                font-size: 2.5rem;
+            }
+
     /* Links and menu items */
     
         a {
@@ -101,6 +105,10 @@
         a:hover, .ocean h3:hover {
             text-decoration: underline;
             text-decoration-thickness: 3px;
+        }
+
+        #indexTitle a:hover {
+            text-decoration: none;
         }
 
     /* Navbar */
@@ -196,10 +204,20 @@
         padding-bottom: 2rem;
     }
 
-    #indexTitle h3, #aboutText {
+    #indexTitle h3 {
+        width: 70%;
         padding-left: .3rem;
     }
 
+    i {
+        padding: 1rem .3rem 0 .3rem;
+        transition: 100ms;
+    }
+
+    i:hover {
+        color: var(--offWhite);
+    }
+    
 /* About */
 
     /* Ocean image */
@@ -543,6 +561,14 @@
                 height: 50%;
             }
 
+            .maxHeight {
+                max-height: 100%;
+            }
+
+            .noHeight {
+                max-height: 0;
+            }
+
         /* Shapes */
         
             .square {
@@ -636,7 +662,7 @@
                         font-size: 3.75rem;
                     }
                     
-                    nav h3, nav a, label, button {      
+                    nav h3, nav a, label, button, i {      
                         font-size: 1.8rem;
                     }
 
@@ -728,7 +754,7 @@
                             font-size: 3.5rem;
                         }
                         
-                        nav h3, nav a, label, button {      
+                        nav h3, nav a, label, button, i {      
                             font-size: 1.75rem;
                         }
 
@@ -791,7 +817,7 @@
                     width: 80%;
                 }
 
-                #indexTitle h1, #indexTitle h3 {
+                #indexTitle h1, #indexTitle , i {
                     color: var(--offWhite);
                 }
 
@@ -1017,7 +1043,7 @@
                     font-size: 3.5rem;
                 }
 
-                #indexTitle h3, #indexMenu span a{
+                #indexTitle h3, #indexMenu span a, i {
                     font-size: 1.75rem;
                 }
 
@@ -1074,7 +1100,7 @@
                     font-size: 3.5rem;
                 }
 
-                #indexTitle h3, #indexMenu span a {
+                #indexTitle h3, #indexMenu span a, i {
                     font-size: 1.75rem;
                 }
 
@@ -1119,7 +1145,7 @@
                     font-size: 3rem;
                 }
 
-                #indexTitle h3, #indexMenu span a {
+                #indexTitle h3, #indexMenu span a, i {
                     font-size: 1.5rem;
                 }
 
@@ -1151,7 +1177,7 @@
                         font-size: 1.25rem;
                     }
 
-                    h3, a {
+                    h3, a, i {
                         font-size: 1.5rem;
                     }
 
@@ -1170,7 +1196,7 @@
                         font-size: 2.5rem;
                     }
 
-                    #indexTitle h3 {
+                    #indexTitle h3, i {
                         padding: 0;
                     }
 
@@ -1250,7 +1276,7 @@
                 font-size: 2.4rem;
             }
             
-            #indexTitle h3, #indexMenu span a {
+            #indexTitle h3, #indexMenu span a, i {
                 font-size: 1.4rem;
             }
 
@@ -1258,7 +1284,7 @@
 
         @media(max-width: 350px) {
             
-            #indexTitle h3, #indexMenu span a {
+            #indexTitle h3, #indexMenu span a, i {
                 font-size: 1.3rem;
             }
 
@@ -1270,7 +1296,7 @@
                 font-size: 2.3rem;
             }
             
-            #indexTitle h3, #indexMenu span a {
+            #indexTitle h3, #indexMenu span a, i {
                 font-size: 1.2rem;
             }
 
@@ -1312,7 +1338,7 @@
                     font-size: 3rem;
                 }
 
-                #indexTitle, #indexTitle h3 {
+                #indexTitle, #indexTitle h3, i {
                     padding: 0;
                 }
 
@@ -1405,7 +1431,7 @@
             font-size: 2.6rem;
         }
         
-        #indexTitle h3, #indexMenu span a {
+        #indexTitle h3, #indexMenu span a, i {
             font-size: 1.6rem;
         }
 
