@@ -217,7 +217,7 @@
     i:hover {
         color: var(--offWhite);
     }
-    
+
 /* About */
 
     /* Ocean image */
@@ -817,7 +817,7 @@
                     width: 80%;
                 }
 
-                #indexTitle h1, #indexTitle , i {
+                #indexTitle h1, #indexTitle h3, i {
                     color: var(--offWhite);
                 }
 
