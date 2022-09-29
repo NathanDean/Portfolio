@@ -817,6 +817,10 @@
                     width: 80%;
                 }
 
+                #indexTitle h3 {
+                    width: auto;
+                }
+
                 #indexTitle h1, #indexTitle h3, i {
                     color: var(--offWhite);
                 }
@@ -1207,7 +1211,7 @@
                         justify-content: space-between;
                         align-items: flex-start;
 
-                        padding-top: 26rem;
+                        padding-top: 25rem;
                         padding-left: 0;
                     }
 
