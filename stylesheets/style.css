@@ -107,7 +107,7 @@
             text-decoration-thickness: 3px;
         }
 
-        #indexTitle a:hover {
+        #icons a:hover, #mobileIcons a:hover {
             text-decoration: none;
         }
 
@@ -228,13 +228,13 @@
             
     /* Bio section */
 
-        #headshot {
+        /* #headshot {
             float: right;
 
             width: 55%;
 
             padding: 0 1rem 2rem 2rem;
-        }
+        } */
     
         /* Bio text */
         
@@ -670,14 +670,15 @@
                         font-size: 3.75rem;
                     }
                     
-                    nav h3, nav a, label, button, i {      
+                    nav h3, nav a, label, button {      
                         font-size: 1.8rem;
                     }
 
                 /* Text */
 
                     p, p a {
-                        font-size: 1.125rem;                    }
+                        font-size: 1.125rem;
+                    }
                 
             /* Gallery */
             
@@ -762,7 +763,7 @@
                             font-size: 3.5rem;
                         }
                         
-                        nav h3, nav a, label, button, i {      
+                        nav h3, nav a, label, button {      
                             font-size: 1.75rem;
                         }
 
@@ -1059,6 +1060,10 @@
                     font-size: 1.75rem;
                 }
 
+                i {
+                    font-size: 2.25rem;
+                }
+
             /* Gallery */
             
                 /* Resizes items in gallery to fit two per row */
@@ -1106,16 +1111,6 @@
                         font-size: 2.5rem;
                     }
 
-            /* Index */
-        
-                #indexTitle h1 {
-                    font-size: 3.5rem;
-                }
-
-                #indexTitle h3, #indexMenu span a, i {
-                    font-size: 1.75rem;
-                }
-
             /* About */
 
                 #aboutTextContainer, #contactScrollContainer {
@@ -1157,8 +1152,12 @@
                     font-size: 3rem;
                 }
 
-                #indexTitle h3, #indexMenu span a, i {
+                #indexTitle h3, #indexMenu span a {
                     font-size: 1.5rem;
+                }
+
+                i {
+                    font-size: 2rem;
                 }
 
         }
@@ -1189,8 +1188,12 @@
                         font-size: 1.25rem;
                     }
 
-                    h3, a, i {
+                    h3, a {
                         font-size: 1.5rem;
+                    }
+
+                    i {
+                        font-size: 1.75rem;
                     }
 
                 /* Index */
@@ -1300,16 +1303,24 @@
                 font-size: 2.4rem;
             }
             
-            #indexTitle h3, #indexMenu span a, i {
+            #indexTitle h3, #indexMenu span a {
                 font-size: 1.4rem;
+            }
+
+            i {
+                font-size: 1.7rem;
             }
 
         }
 
         @media(max-width: 350px) {
             
-            #indexTitle h3, #indexMenu span a, i {
+            #indexTitle h3, #indexMenu span a {
                 font-size: 1.3rem;
+            }
+
+            i {
+                font-size: 1.6rem;
             }
 
         }
@@ -1320,8 +1331,12 @@
                 font-size: 2.3rem;
             }
             
-            #indexTitle h3, #indexMenu span a, i {
+            #indexTitle h3, #indexMenu span a {
                 font-size: 1.2rem;
+            }
+
+            i {
+                font-size: 1.5rem;
             }
 
         }
