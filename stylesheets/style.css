@@ -205,7 +205,6 @@
     }
 
     #indexTitle h3 {
-        width: 70%;
         padding-left: .3rem;
     }
 
@@ -807,19 +806,35 @@
                 }
 
                 #indexMenu {
-                    bottom: 10%;
-                    
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
                     
-                    width: 100%;
+                    bottom: 5%;
+                    
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
 
-                    padding: 0 .3rem;
+                    padding-top: 25rem;
+                    padding-left: 0;
                 }
+
+                #icons {
+                    display: none;
+                }
+
+                #mobileIcons {
+                    display: block;
+                }
+
+                .fa-github {
+                    padding-left: 0;
+                    padding-right: 1.5rem;
+                }
+
 
                 #indexMenu span {
                     flex-basis: auto;
+                    padding: .75rem 0;
                 }
 
                 #indexTitle, #indexMenu {
@@ -1056,12 +1071,16 @@
                     font-size: 3.5rem;
                 }
 
-                #indexTitle h3, #indexMenu span a, i {
+                #indexTitle h3, #indexMenu span a {
                     font-size: 1.75rem;
                 }
 
                 i {
                     font-size: 2.25rem;
+                }
+
+                .fa-github {
+                    padding-right: 1.25rem;
                 }
 
             /* Gallery */
@@ -1160,6 +1179,11 @@
                     font-size: 2rem;
                 }
 
+                
+                .fa-github {
+                    padding-right: 1rem;
+                }
+
         }
 
     /* Mobile */
@@ -1194,6 +1218,10 @@
 
                     i {
                         font-size: 1.75rem;
+                    }
+                    
+                    .fa-github {
+                        padding-right: 1rem;
                     }
 
                 /* Index */
