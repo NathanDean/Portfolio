@@ -6,7 +6,7 @@ My first portfolio site, built using HTML, CSS, JavaScript, Node.js and Express.
 
 ## Why 
 
-I started building this site as part of a course I was doing.  However, I decided to push myself by creating some features that would test my skills, which meant that I continued working on the project for a few weeks after I finished the course. 
+I started building this site as part of a web development course.  However, I decided to push myself by creating some features that would test my skills, which meant that I continued working on the project for a few weeks after I finished the course. 
 
 ## How 
 
